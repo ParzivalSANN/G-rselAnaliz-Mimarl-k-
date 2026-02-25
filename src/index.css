@@ -1,39 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0A0A0A;
-  --color-accent-pink: #f31233;
-  --color-accent-red: #e11d48;
-  --color-accent-cyan: #06b6d4;
-  --color-card-bg: rgba(255, 255, 255, 0.05);
+  --color-background: #FFFFFF;
+  --color-foreground: #1A1A1A;
+  --color-accent-pink: #FF4D91;
+  /* Softer, premium pink */
+  --color-accent-deep-pink: #D4145A;
+  --color-accent-cyan: #0FBAD6;
+  --color-card-bg: rgba(0, 0, 0, 0.03);
 
   --font-mono: "JetBrains Mono", monospace;
   --font-sans: "Inter", sans-serif;
 }
 
 @utility glass-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 1rem;
 }
 
 @utility neon-border {
   border-color: var(--color-accent-pink);
-  box-shadow: 0 0 15px rgba(243, 18, 51, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 77, 145, 0.15);
 }
 
 @utility tech-mono {
   font-family: var(--font-mono);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
 }
 
 @layer base {
   body {
     background-color: var(--color-background);
-    color: white;
+    color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow: hidden;
@@ -54,6 +56,6 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f31233;
+  background: var(--color-accent-pink);
   border-radius: 10px;
 }
