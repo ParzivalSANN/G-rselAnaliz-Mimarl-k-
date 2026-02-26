@@ -45,24 +45,16 @@ const App = () => {
     setError(null);
 
     try {
-      const response = await fetch('/.netlify/functions/transform', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          source: sourceImage,
-          reference: referenceStyle,
-          analysisConfig: analysisResults // Send user-edited config
-        }),
-      });
+      // Import the powerful canvas-based wireframe generator
+      const { generateWireframe } = await import('./utils/imageProcessor');
 
-      if (!response.ok) {
-        throw new Error('Dönüştürme başarısız oldu. Lütfen tekrar deneyin.');
-      }
+      // Simüle edilmiş bir bekleme süresi (UI animasyonunu göstermek için)
+      await new Promise(resolve => setTimeout(resolve, 2000));
 
-      const data = await response.json();
-      setResultImage(data.result);
+      // Gerçek zamanlı görüntü işleme (Edge Detection / Tel Kafes çıkarma)
+      const wireframeUrl = await generateWireframe(sourceImage, isDark, analysisResults);
+
+      setResultImage(wireframeUrl);
     } catch (err) {
       setError(err.message);
     } finally {
