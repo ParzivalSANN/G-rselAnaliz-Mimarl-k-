@@ -1,7 +1,7 @@
 // netlify/functions/transform.js
 
 /**
- * PGZO MİMARLIK Backend Bridge
+ * egzo MİMARLIK Backend Bridge
  * This function handles requests from the frontend and simulates 
  * processing with the AI Model using the extracted 'analysisConfig'.
  */
@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
          * Constrains the diffusion/generation model to match the exact aesthetic.
          */
 
-        console.log("Transmitting to PGZO AI Core...");
+        console.log("Transmitting to egzo AI Core...");
         console.log("Applying Parameters:", analysisConfig);
 
         // Simulate complex rendering delay
@@ -45,7 +45,7 @@ exports.handler = async (event, context) => {
                 success: true,
                 result: resultImage,
                 metadata: {
-                    engine: "PGZO_Vision_v3",
+                    engine: "egzo_Vision_v3",
                     appliedParameters: analysisConfig || "Auto",
                     processingTime: "1250ms",
                 }

@@ -165,7 +165,7 @@ const App = () => {
       {/* System Footer Bar */}
       <div className="absolute bottom-4 left-4 z-50 pointer-events-none opacity-20 hidden md:block select-none mix-blend-difference">
         <div className="tech-mono text-[9px] space-y-1 text-white">
-          <div>Sistem: PGZO_MİMARLIK_AI</div>
+          <div>Sistem: egzo_MİMARLIK_AI</div>
           <div>Mod: {isDark ? 'GECE_GÖRÜŞÜ' : 'GÜNDÜZ_GÖRÜŞÜ'}</div>
           <div>Bağlantı: GÜVENLİ</div>
         </div>

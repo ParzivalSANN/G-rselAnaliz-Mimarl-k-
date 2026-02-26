@@ -57,7 +57,7 @@ const ProcessView = ({ analysisConfig }) => {
             <div className="text-center space-y-4">
                 <h3 className="text-2xl font-bold tech-mono tracking-tighter text-[var(--fg-color)]">Geometri Modelleniyor</h3>
                 <p className="text-[var(--fg-color)]/40 text-sm max-w-xs tech-mono leading-relaxed mx-auto">
-                    3D veriler, analiz edilen stil profiline (PGZO_Vision_v3) uygun olarak yeniden oluşturuluyor...
+                    3D veriler, analiz edilen stil profiline (egzo_Vision_v3) uygun olarak yeniden oluşturuluyor...
                 </p>
             </div>
 

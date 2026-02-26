@@ -42,7 +42,7 @@ const DynamicStylePanel = ({ style, onStyleChange, analysisResults, onUpdateAnal
                     <div className="group relative">
                         <HelpCircle size={14} className="text-foreground/20 cursor-help hover:text-accent-pink transition-colors" />
                         <div className="absolute right-0 top-full mt-2 w-56 p-3 glass-card shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-[10px] text-foreground/70">
-                            Yapay zeka (PGZO Vision), yüklenen görseldeki çizgi ağırlıklarını, ana vurgu renklerini ve karmaşıklığı analiz ederek stil profilini çıkartır.
+                            Yapay zeka (egzo Vision), yüklenen görseldeki çizgi ağırlıklarını, ana vurgu renklerini ve karmaşıklığı analiz ederek stil profilini çıkartır.
                         </div>
                     </div>
                 </div>
