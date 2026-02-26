@@ -14,6 +14,15 @@ const ComparisonView = ({ original, processed, onReset }) => {
         setSliderPos(Math.min(Math.max(position, 0), 100));
     };
 
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = processed;
+        link.download = 'egzo-mimarlik-tel-kafes.jpg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -25,7 +34,7 @@ const ComparisonView = ({ original, processed, onReset }) => {
                     Dönüşüm <span className="text-[var(--accent-pink)]">Tamamlandı</span>
                 </h2>
                 <div className="flex gap-2">
-                    <button className="p-2 glass-card hover:text-[var(--accent-pink)] transition-colors text-[var(--fg-color)]/60">
+                    <button onClick={handleDownload} className="p-2 glass-card hover:text-[var(--accent-pink)] transition-colors text-[var(--fg-color)]/60" title="İndir">
                         <Download size={18} />
                     </button>
                     <button className="p-2 glass-card hover:text-[var(--accent-pink)] transition-colors text-[var(--fg-color)]/60">
@@ -79,9 +88,10 @@ const ComparisonView = ({ original, processed, onReset }) => {
                 </button>
 
                 <button
+                    onClick={handleDownload}
                     className="flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-[var(--accent-pink)] to-[var(--accent-deep-pink)] text-white transition-all tech-mono text-xs font-bold active:scale-[0.98] shadow-md hover:shadow-lg rounded-xl"
                 >
-                    Vektör Verisini İndir
+                    <Download size={16} /> Görüntüyü İndir
                 </button>
             </div>
 
