@@ -1,28 +1,52 @@
 @import "tailwindcss";
 
+@layer base {
+  :root {
+    --bg-color: #FAFAFA;
+    --fg-color: #1A1A1A;
+    --accent-pink: #FF4D91;
+    --accent-deep-pink: #D4145A;
+    --accent-cyan: #0FBAD6;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(0, 0, 0, 0.08);
+    --neon-shadow: 0 4px 20px rgba(255, 77, 145, 0.15);
+  }
+
+  .dark {
+    --bg-color: #0A0A0A;
+    --fg-color: #FFFFFF;
+    --accent-pink: #f31233;
+    --accent-deep-pink: #e11d48;
+    --accent-cyan: #06b6d4;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --neon-shadow: 0 0 15px rgba(243, 18, 51, 0.3);
+  }
+}
+
 @theme {
-  --color-background: #FFFFFF;
-  --color-foreground: #1A1A1A;
-  --color-accent-pink: #FF4D91;
-  /* Softer, premium pink */
-  --color-accent-deep-pink: #D4145A;
-  --color-accent-cyan: #0FBAD6;
-  --color-card-bg: rgba(0, 0, 0, 0.03);
+  --color-background: var(--bg-color);
+  --color-foreground: var(--fg-color);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-deep-pink: var(--accent-deep-pink);
+  --color-accent-cyan: var(--accent-cyan);
 
   --font-mono: "JetBrains Mono", monospace;
   --font-sans: "Inter", sans-serif;
 }
 
 @utility glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
   border-radius: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 @utility neon-border {
-  border-color: var(--color-accent-pink);
-  box-shadow: 0 4px 20px rgba(255, 77, 145, 0.15);
+  border-color: var(--accent-pink);
+  box-shadow: var(--neon-shadow);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 @utility tech-mono {
@@ -34,8 +58,8 @@
 
 @layer base {
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--bg-color);
+    color: var(--fg-color);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow: hidden;
@@ -43,6 +67,7 @@
     padding: 0;
     height: 100vh;
     width: 100vw;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 }
 
@@ -56,6 +81,25 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-accent-pink);
+  background: var(--accent-pink);
   border-radius: 10px;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
 }
