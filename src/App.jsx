@@ -154,12 +154,12 @@ const App = () => {
         </section>
       </main>
 
-      {/* System Footer Bar */}
-      <div className="absolute bottom-4 left-4 z-50 pointer-events-none opacity-20 hidden md:block select-none mix-blend-difference">
-        <div className="tech-mono text-[9px] space-y-1 text-white">
-          <div>Sistem: egzo_MİMARLIK_AI</div>
-          <div>Mod: {isDark ? 'GECE_GÖRÜŞÜ' : 'GÜNDÜZ_GÖRÜŞÜ'}</div>
-          <div>Bağlantı: GÜVENLİ</div>
+      {/* System Footer Bar - Adjusted for visibility without overlapping */}
+      <div className="hidden md:flex justify-between items-center px-4 py-2 border-t border-[var(--fg-color)]/5 bg-[var(--bg-color)] z-30 opacity-60">
+        <div className="tech-mono text-[9px] flex gap-6 text-[var(--fg-color)]">
+          <div>SİSTEM: egzo_MİMARLIK_AI</div>
+          <div>MOD: {isDark ? 'GECE_GÖRÜŞÜ' : 'GÜNDÜZ_GÖRÜŞÜ'}</div>
+          <div>BAĞLANTI: GÜVENLİ</div>
         </div>
       </div>
     </div>
